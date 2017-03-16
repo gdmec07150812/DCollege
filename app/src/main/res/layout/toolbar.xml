@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:orientation="vertical">
+
+    <RadioGroup
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/toolBar_background"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/toolBar1"
+            style="@style/toolItem"
+            android:drawableTop="@drawable/toolbar1_background"
+            android:text="消息"
+            android:textColor="@drawable/toolbar_color" />
+
+        <RadioButton
+            android:id="@+id/toolBar2"
+            style="@style/toolItem"
+            android:drawableTop="@drawable/toolbar2_background"
+            android:text="工具"
+            android:textColor="@drawable/toolbar_color" />
+
+        <RadioButton
+            android:id="@+id/toolBar3"
+            style="@style/toolItem"
+            android:drawableTop="@drawable/toolbar3_background"
+            android:text="设置"
+            android:textColor="@drawable/toolbar_color" />
+    </RadioGroup>
+
+</RelativeLayout>
