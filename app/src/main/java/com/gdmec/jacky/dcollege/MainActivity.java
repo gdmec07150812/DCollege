@@ -2,10 +2,8 @@ package com.gdmec.jacky.dcollege;
 
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
-import android.support.v4.widget.DrawerLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.RelativeLayout;
 
 public class MainActivity extends FragmentActivity {
     private RadioGroup radioGroup;
