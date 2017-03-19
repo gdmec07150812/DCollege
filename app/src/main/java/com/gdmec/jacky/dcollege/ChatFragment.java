@@ -1,11 +1,13 @@
 package com.gdmec.jacky.dcollege;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
@@ -18,10 +20,11 @@ public class ChatFragment extends Fragment {
     private DrawerLayout drawerLayout;
     private RelativeLayout leftDrawer;
     private ListView chatListListView;
+    private List<User> list;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.chatview, container, false);
+        return inflater.inflate(R.layout.chat_view, container, false);
     }
 
     @Override
@@ -32,7 +35,7 @@ public class ChatFragment extends Fragment {
         leftDrawer = (RelativeLayout) getActivity().findViewById(R.id.leftDrawer);
         chatListListView = (ListView) getActivity().findViewById(R.id.chatListListView);
         ChatListAdapter chatListAdapter = new ChatListAdapter(getContext());
-        List<User> list = new ArrayList<User>();
+        list = new ArrayList<User>();
         list.add(new User("1", R.drawable.user_icon, "1234567890"));
         list.add(new User("2", R.drawable.black, "abcdefghijklmnopq"));
         list.add(new User("3", R.drawable.clean, "3415retysgfsdfg"));
@@ -47,6 +50,18 @@ public class ChatFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 drawerLayout.openDrawer(leftDrawer);
+            }
+        });
+        chatListListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getActivity(), ChatActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putInt("userIcon", list.get(position).getUserIcon());
+                bundle.putString("userName", list.get(position).getName());
+                bundle.putString("chatInfo", list.get(position).getChatInfo());
+                intent.putExtras(bundle);
+                startActivity(intent);
             }
         });
     }
