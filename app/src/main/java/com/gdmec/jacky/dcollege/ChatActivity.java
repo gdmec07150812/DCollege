@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 
@@ -12,12 +13,14 @@ public class ChatActivity extends Activity {
     private ImageView chatUserIcon;
     private TextView chatUserName;
     private TextView chatInfo;
+    private ListView chatListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chat_activity);
         chatUserName = (TextView) findViewById(R.id.chatUserName);
+        chatListView = (ListView) findViewById(R.id.chatListView);
         Bundle bundle = this.getIntent().getExtras();
         chatUserName.setText(bundle.getString("userName"));
 
