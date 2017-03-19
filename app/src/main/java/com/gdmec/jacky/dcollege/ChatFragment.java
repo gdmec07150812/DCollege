@@ -37,7 +37,7 @@ public class ChatFragment extends Fragment {
         list.add(new User("2", R.drawable.black, "abcdefghijklmnopq"));
         list.add(new User("3", R.drawable.clean, "3415retysgfsdfg"));
         list.add(new User("4", R.drawable.individuation, "fdkgjhgd23452345"));
-        chatListAdapter.setUserList(list);
+        chatListAdapter.setDataList(list);
         chatListListView.setAdapter(chatListAdapter);
         setListener();
     }
