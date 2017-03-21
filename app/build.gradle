@@ -27,10 +27,4 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.3.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
-    compile files('libs/imsdk.jar')
-    compile files('libs/mobilepb.jar')
-    compile files('libs/qalsdk.jar')
-    compile files('libs/soload.jar')
-    compile files('libs/tls_sdk.jar')
-    compile files('libs/wup-1.0.0-SNAPSHOT.jar')
 }
