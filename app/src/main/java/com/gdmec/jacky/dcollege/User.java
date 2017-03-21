@@ -1,23 +1,32 @@
 package com.gdmec.jacky.dcollege;
 
 public class User {
-    private String name;
+    private String userId;
+    private String userName;
     private int userIcon;
-    private String chatInfo;
+    private String lastMessage;
 
-    public User(String name, int userIcon, String chatInfo) {
-        this.name = name;
+    public User(String userId, String userName, int userIcon, String lastMessage) {
+        this.userId = userId;
+        this.userName = userName;
         this.userIcon = userIcon;
-        this.chatInfo = chatInfo;
+        this.lastMessage = lastMessage;
     }
 
-    public String getChatInfo() {
-        return chatInfo;
-
+    public String getUserId() {
+        return userId;
     }
 
-    public void setChatInfo(String chatInfo) {
-        this.chatInfo = chatInfo;
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public int getUserIcon() {
@@ -28,11 +37,11 @@ public class User {
         this.userIcon = userIcon;
     }
 
-    public String getName() {
-        return name;
+    public String getLastMessage() {
+        return lastMessage;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setLastMessage(String lastMessage) {
+        this.lastMessage = lastMessage;
     }
 }

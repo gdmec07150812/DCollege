@@ -1,46 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp">
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/navigationbar">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_alignParentTop="true"
-            android:background="@color/navigationbar">
+        <ImageButton
+            android:id="@+id/leftButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/back"
+            android:onClick="backTo" />
 
-            <ImageButton
-                android:id="@+id/leftButton"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="20dp"
-                android:background="@drawable/back"
-                android:onClick="backTo" />
-
-            <TextView
-                android:id="@+id/chatUserName"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_centerHorizontal="true"
-                android:gravity="center"
-                android:text=""
-                android:textColor="#FFFFFF"
-                android:textSize="23sp"
-                android:textStyle="bold" />
-        </RelativeLayout>
+        <TextView
+            android:id="@+id/friendUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text=""
+            android:textColor="#FFFFFF"
+            android:textSize="23sp"
+            android:textStyle="bold" />
     </RelativeLayout>
 
     <ListView
         android:id="@+id/chatListView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:layout_marginTop="50dp"></ListView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
         android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"></ListView>
-</LinearLayout>
+        android:layout_marginRight="15dp">
+
+        <ImageView
+            android:id="@+id/chatVoiceButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/back" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_toLeftOf="@+id/chatSendButton"
+            android:layout_toRightOf="@+id/chatVoiceButton"
+            android:text="发送消息" />
+
+        <Button
+            android:id="@+id/chatSendButton"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:text="发送" />
+    </RelativeLayout>
+</RelativeLayout>

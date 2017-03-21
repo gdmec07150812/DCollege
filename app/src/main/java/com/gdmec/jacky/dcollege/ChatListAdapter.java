@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class ChatListAdapter extends MyAdapter<User> {
+
     public ChatListAdapter(Context context) {
         super(context);
     }
@@ -15,18 +16,15 @@ public class ChatListAdapter extends MyAdapter<User> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.chatlist_item, null);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.chat_list_item, null);
         }
         ImageView chatListUserIcon = MyViewHolder.get(convertView, R.id.chatListUserIcon);
         TextView chatListUserName = MyViewHolder.get(convertView, R.id.chatListUserName);
-        TextView chatListChatInfo = MyViewHolder.get(convertView, R.id.chatListChatInfo);
         User user = getDataList().get(position);
         chatListUserIcon.setImageResource(user.getUserIcon());
-        chatListUserName.setText(user.getName());
-        chatListChatInfo.setText(user.getChatInfo());
+        chatListUserName.setText(user.getUserName());
         return convertView;
     }
-
 }
 
 //    private Context context;
@@ -67,7 +65,7 @@ public class ChatListAdapter extends MyAdapter<User> {
 //    public View getView(int position, View convertView, ViewGroup parent) {
 //        ViewHolder viewHolder = null;
 //        if (convertView == null) {
-//            convertView = LayoutInflater.from(context).inflate(R.layout.chatlist_item, null);
+//            convertView = LayoutInflater.from(context).inflate(R.layout.chat_list_item, null);
 //            viewHolder = new ViewHolder();
 //            viewHolder.chatListUserIcon = (ImageView) convertView.findViewById(R.id.chatListUserIcon);
 //            viewHolder.chatListUserName = (TextView) convertView.findViewById(R.id.chatListUserName);

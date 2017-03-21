@@ -24,7 +24,7 @@ public class ChatFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.chat_view, container, false);
+        return inflater.inflate(R.layout.chat_fragment, container, false);
     }
 
     @Override
@@ -36,10 +36,10 @@ public class ChatFragment extends Fragment {
         chatListListView = (ListView) getActivity().findViewById(R.id.chatListListView);
         ChatListAdapter chatListAdapter = new ChatListAdapter(getContext());
         list = new ArrayList<User>();
-        list.add(new User("1", R.drawable.user_icon, "1234567890"));
-        list.add(new User("2", R.drawable.black, "abcdefghijklmnopq"));
-        list.add(new User("3", R.drawable.clean, "3415retysgfsdfg"));
-        list.add(new User("4", R.drawable.individuation, "fdkgjhgd23452345"));
+        list.add(new User("1", "Ding", R.drawable.user_icon, "1234567890"));
+        list.add(new User("2", "Jacky", R.drawable.black, "abcdefghijklmnopq"));
+        list.add(new User("3", "Xi", R.drawable.clean, "3415retysgfsdfg"));
+        list.add(new User("4", "Yuan", R.drawable.individuation, "fdkgjhgd23452345"));
         chatListAdapter.setDataList(list);
         chatListListView.setAdapter(chatListAdapter);
         setListener();
@@ -58,8 +58,8 @@ public class ChatFragment extends Fragment {
                 Intent intent = new Intent(getActivity(), ChatActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putInt("userIcon", list.get(position).getUserIcon());
-                bundle.putString("userName", list.get(position).getName());
-                bundle.putString("chatInfo", list.get(position).getChatInfo());
+                bundle.putString("friendUserName", list.get(position).getUserName());
+                bundle.putString("userId", list.get(position).getUserId());
                 intent.putExtras(bundle);
                 startActivity(intent);
             }

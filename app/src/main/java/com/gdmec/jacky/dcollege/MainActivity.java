@@ -1,5 +1,6 @@
 package com.gdmec.jacky.dcollege;
 
+import android.content.Context;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.widget.RadioButton;
@@ -8,6 +9,10 @@ import android.widget.RadioGroup;
 public class MainActivity extends FragmentActivity {
     private RadioGroup radioGroup;
     private RadioButton toolBar1;
+
+    public static Context getContext() {
+        return getContext();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,5 +43,6 @@ public class MainActivity extends FragmentActivity {
             }
         });
     }
+
 
 }
